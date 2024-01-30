@@ -145,18 +145,9 @@
             expandFirstLevel="false"
             columnResize="true"
             enableColumnReordering="false"
-            rows="{
-                path : '/Remessas',
-                parameters : {               
-                
-                    treeAnnotationProperties : {
-                        hierarchyLevelFor :  'HierarchyLevel',
-                        hierarchyNodeFor : 'NodeID',
-                        hierarchyParentNodeFor : 'ParentNodeID',
-                        hierarchyDrillStateFor : 'DrillState'
-                    }
-                }
-        }"
+            
+
+
             >
     
             <t:columns>

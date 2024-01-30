@@ -289,27 +289,27 @@ sap.ui.define([
 
 
             var n = this;
-       //    n.getView().byId("treeTable").bindRows({
-       //        path : '/Remessas',
-       //        filters: arrayFilters,
-       //        parameters : {
-       //         //   arrayNames: ['devolv_items'],
-       //         //   countMode : 'Inline',
-       //         suspended: true,
+            n.getView().byId("treeTable").bindRows({
+                path : '/Remessas',
+                filters: arrayFilters,
+                parameters : {
+                 //   arrayNames: ['devolv_items'],
+                 //   countMode : 'Inline',
+                 suspended: true,
 
-       // //        useServersideApplicationFilters: false,
-       //         autoExpandMode:'Bundled',
-       //         countMode: 'Inline',
-       // //        operationMode:'Client',    
-       //            treeAnnotationProperties : {
-       //                hierarchyLevelFor :  'HierarchyLevel',
-       //                hierarchyNodeFor : 'NodeID',
-       //                hierarchyParentNodeFor : 'ParentNodeID',
-       //                hierarchyDrillStateFor : 'DrillState'
-       //            }
-       //        }
-       //    });
-       //     n.onRefresh();  
+         //        useServersideApplicationFilters: false,
+                 autoExpandMode:'Bundled',
+                 countMode: 'Inline',
+         //        operationMode:'Client',    
+                    treeAnnotationProperties : {
+                        hierarchyLevelFor :  'HierarchyLevel',
+                        hierarchyNodeFor : 'NodeID',
+                        hierarchyParentNodeFor : 'ParentNodeID',
+                        hierarchyDrillStateFor : 'DrillState'
+                    }
+                }
+            });
+            n.onRefresh();  
             
          // var url = "/sap/opu/odata/SAP/ZGWFI_REL_REMESSA_SRV/";
          // var odataModel = new sap.ui.model.odata.ODataModel(url);
