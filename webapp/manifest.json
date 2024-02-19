@@ -1,5 +1,6 @@
 {
   "_version": "1.58.0",
+  
   "sap.app": {
     "id": "zuiremessas",
     "type": "application",
@@ -15,7 +16,6 @@
       "version": "1.11.2",
       "toolsId": "d35e931e-25eb-4b06-8d81-34d91603b1c0"
     },
-    
     "dataSources": {
       "mainService": {
         "uri": "/sap/opu/odata/sap/ZGWFI_REL_REMESSA_SRV/",
@@ -28,9 +28,9 @@
       }
     }
   },
-
   "sap.ui": {
     "technology": "UI5",
+    "fullWidth": true,
     "icons": {
       "icon": "",
       "favIcon": "",
@@ -46,9 +46,7 @@
     }
     
   },
-  "config": {
-    "fullWidth": true
-  },
+ 
   "sap.ui5": {
     "flexEnabled": false,
     "dependencies": {
@@ -63,8 +61,9 @@
         "sap.ui.table": {},
         "sap.ushell": {}
       }
+      
     },
-    
+ 
     "contentDensities": {
       "compact": true,
       "cozy": true
@@ -83,8 +82,15 @@
       }
     },
     "resources": {
-      "css": []
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
     },
+    "css": [
+      "style/style.css"
+  ],
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
@@ -144,5 +150,6 @@
       "async": true,
       "id": "app"
     }
+  
   }
 }

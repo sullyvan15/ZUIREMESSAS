@@ -45,6 +45,31 @@
                 <Property Name="Netpriceamount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="6" sap:unicode="false" sap:label="Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Netvalueamount" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
+            <Annotations Target="ZGWFI_REL_REMESSA_SRV.Remessas/BR_NFENUMBER"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation Term="Common.ValueList">
+                <Record>
+                    <PropertyValue Property="Label" String="Clientes" />
+                    <PropertyValue Property="CollectionPath" String="Clientes" />
+                    <PropertyValue Property="SearchSupported" Bool="true" />
+                    <PropertyValue Property="Parameters">
+                        <Collection>
+                            <Record Type="Common.ValueListParameterInOut">
+                                <PropertyValue Property="LocalDataProperty"
+                                    PropertyPath="Clientes" />
+                                <PropertyValue Property="ValueListProperty"
+                                    String="BR_NFPARTNER" />
+                            </Record>
+                            <Record
+                                Type="Common.ValueListParameterDisplayOnly">
+                                <PropertyValue Property="ValueListProperty"
+                                    String="BR_NFPARTNERNAME" />
+                            </Record>
+                        </Collection>
+                    </PropertyValue>
+                </Record>
+            </Annotation>
+        </Annotations>
             <EntityContainer Name="ZGWFI_REL_REMESSA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="Remessas" EntityType="ZGWFI_REL_REMESSA_SRV.Remessas" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="DevolItensSet" EntityType="ZGWFI_REL_REMESSA_SRV.DevolItens" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
