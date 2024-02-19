@@ -9,7 +9,7 @@ sap.ui.define([
     return UIComponent.extend("zuiremessas.Component", {
 
         metadata : {
-            manifest: "json"
+             manifest: "json", config: { fullWidth: true } 
         },
 
         /**
