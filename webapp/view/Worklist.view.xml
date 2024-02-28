@@ -35,7 +35,7 @@
                 <fb:FilterGroupItem name="Cliente" label="Cliente" groupName="Group1" visibleInFilterBar="true" >
                     <fb:control>
                         
-                    <MultiInput id="fieldBarCliente" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{/Clientes}" >
+                    <MultiInput id="fieldBarCliente" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp"  suggestionItems="{/Clientes}" >
                         <suggestionItems>
                             <core:ListItem
                                 key="{BR_NFPARTNER}"
@@ -54,7 +54,7 @@
                 </fb:FilterGroupItem>
                 <fb:FilterGroupItem name="Centro" label="Centro" groupName="Group1" visibleInFilterBar="true" >
                     <fb:control>
-                        <MultiInput id="fieldBarCentro" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest2" suggestionItems="{/Centros}" >
+                        <MultiInput id="fieldBarCentro" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp" suggestionItems="{/Centros}" >
                             <suggestionItems>
                                 <core:ListItem
                                 key="{CFOP}"
@@ -72,7 +72,7 @@
                     </fb:control>
                 </fb:FilterGroupItem>
 
-                <fb:FilterGroupItem name="Data do pedido" label="Data Início" mandatory="true"   groupName="Group1" visibleInFilterBar="true"  >
+                <fb:FilterGroupItem name="Data do pedido" label="Data Nfe (Início)" mandatory="true"   groupName="Group1" visibleInFilterBar="true"  >
                     <fb:control>
                         <DatePicker
                         id="DP1"
@@ -82,7 +82,7 @@
                     
                 </fb:FilterGroupItem>
 
-                <fb:FilterGroupItem name="Data do pedido2" label="Data fim" mandatory="true"   groupName="Group1" visibleInFilterBar="true"  >
+                <fb:FilterGroupItem name="Data do pedido2" label="Data Nfe (Fim)" mandatory="true"   groupName="Group1" visibleInFilterBar="true"  >
                     <fb:control>
                         <DatePicker
                         id="DP2"
@@ -95,7 +95,7 @@
                 
                 <fb:FilterGroupItem name="Nota fiscal" label="Nota fiscal" groupName="Group1" visibleInFilterBar="false"  >
                     <fb:control>
-                        <MultiInput id="fieldBarNota" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest3" 
+                        <MultiInput id="fieldBarNota" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp" 
                         suggestionItems="{/Notas}"  
                         
                         
@@ -119,7 +119,7 @@
 
                 <fb:FilterGroupItem name="Material" label="Material" groupName="Group1" visibleInFilterBar="true"  >
                     <fb:control>
-                        <MultiInput id="fieldBarMaterial" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest4" suggestionItems="{/Materiais}">
+                        <MultiInput id="fieldBarMaterial" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp" suggestionItems="{/Materiais}">
                         <suggestionItems>
                             <core:ListItem
                             key="{MATERIAL}"
@@ -141,7 +141,7 @@
 
                 <fb:FilterGroupItem name="Material2" label="CFOP" groupName="Group1" visibleInFilterBar="true"  >
                     <fb:control>
-                        <MultiInput id="fieldBarCFOP" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest5" suggestionItems="{/Notas}" required="true">
+                        <MultiInput id="fieldBarCFOP" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp" suggestionItems="{/Notas}" required="true">
                            <suggestionItems>
                             <core:ListItem
                                 key="{CFOP}"
@@ -158,7 +158,7 @@
 
                 <fb:FilterGroupItem name="Material3" label="CFOP Devolução" groupName="Group1" visibleInFilterBar="true"  >
                     <fb:control>
-                        <MultiInput  id="fieldBarCfopDevolv" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest6" suggestionItems="{/Notas}" required="true">
+                        <MultiInput  id="fieldBarCFOPDevolv" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelp" suggestionItems="{/Notas}" required="true">
                             <suggestionItems>
                                 <core:ListItem
                                     key="{CFOP}"
@@ -182,40 +182,33 @@
 
 		<smartTable:SmartTable id="smartTreeTable"
 			                entitySet="Remessas" 
-                            tableType="TreeTable" 
+                            tableType="ResponsiveTable" 
                             header="Remessas"
-                            enableExport="true"
-                            layoutData=""
+                            enableExport="true"                      
                             beforeExport="onBeforeExport"
                             enableAutoBinding="false"
                             showFullScreenButton="true"
                             exportType="UI5Client"
+                            
                             beforeRebindTable="onBeforeRebindTable"
                             ignoredFields="HierarchyLevel,NodeID,ParentNodeID,DEVOL_ITENS,DrillState,checkbox,Devolv_CFOP,CFOP"  
-			                initiallyVisibleFields="BR_NFPARTNER,BR_NFPARTNERNAME,MATERIAL,MATERIALNAME,BR_NOTAFISCAL,NFE_CREATIONDATE,BR_NFSRCDOCNUMBER,BR_NFENUMBER,QUANTITYINBASEUNIT,NETPRICEAMOUNT,NETVALUEAMOUNT,QUANTITYRETURN,CFOP,PLANT,PLANTNAME,STORAGELOCATION,STORAGELOCATIONNAME,DELIVERYDATE,DELIVERYTIME,Data_OV,Data_Nfe,Faturamento,Docnum,Nfe,Devolv_Material,Descricao_Material,Quantidade,Devolv_PrecoUnitario,DevolucaoValor" 
+			                initiallyVisibleFields="BR_NFPARTNER,BR_NFPARTNERNAME,NFE_CREATIONDATE,BR_NFSRCDOCNUMBER,BR_NFENUMBER,BR_NOTAFISCAL,MATERIAL,MATERIALNAME,QUANTITYINBASEUNIT,NETPRICEAMOUNT,NETVALUEAMOUNT,QUANTITYRETURN,PLANT,PLANTNAME,STORAGELOCATION,STORAGELOCATIONNAME,DELIVERYDATE,DELIVERYTIME,Data_OV,Data_Nfe,Faturamento,Docnum,Nfe,Devolv_Material,Descricao_Material,Quantidade,Devolv_PrecoUnitario,DevolucaoValor" 
                             enableAutoColumnWidth="true">
-
                             <smartTable:customData>
+
                             <core:CustomData key="defaultFilterBarExpanded" value='true'/>
                             <core:CustomData key="defaultShowAllFilters" value='true'/>
                             </smartTable:customData>
 			<!-- layout data used to make the table growing but the filter bar fixed -->
         
-                <t:TreeTable id="hierTable_org_hier"   
-                        visibleRowCount="20"
-                        
-                        selectionMode="Single" 
-
-                        >
+                <t:TreeTable id="hierTable_org_hier"  alternateRowColors="true" visibleRowCount="20" selectionMode="Single" >
+ 
                 </t:TreeTable>
                 <smartTable:customToolbar>
                     <OverflowToolbar>
                         <ToolbarSpacer/>
                         <CheckBox  id="itensCancelados" selected="true" text="Excluir itens cancelados" select="onSearch"></CheckBox>
                        <!-- <Button icon="sap-icon://excel-attachment" press="onExportExcel"/> -->
-                   
-
-                    
                     </OverflowToolbar>
                 </smartTable:customToolbar>
                 
